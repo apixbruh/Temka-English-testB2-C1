@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2-C1 Advanced English Grammar Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 1.8em;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            font-size: 1.4em;
+        }
+        .question {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #fafafa;
+            border-radius: 8px;
+            border: 1px solid #eaeaea;
+            transition: all 0.3s ease;
+        }
+        .question p {
+            font-weight: bold;
+            margin-top: 0;
+        }
+        .points-badge {
+            display: inline-block;
+            background: #e0e0e0;
+            color: #555;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-left: 10px;
+            font-weight: normal;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+        label:hover {
+            background: #eef2f5;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        .hint {
+            font-size: 0.85em;
+            color: #7f8c8d;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        #result-box {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .warning { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+        .danger { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            display: block;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            display: block;
+            border: 1px solid #f5c6cb;
+        }
+        .correct-input { border: 2px solid #28a745 !important; background-color: #f0fdf4; }
+        .incorrect-input { border: 2px solid #dc3545 !important; background-color: #fff5f5; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>B2-C1 Advanced English Grammar Test</h1>
+    <p style="text-align: center; color: #7f8c8d;">Questions are weighted based on complexity.</p>
+
+    <div id="englishTest">
+        <h2>Part 1: Multiple Choice</h2>
+        
+        <div class="question" id="box-q1">
+            <p>1. By the time the police ___, the thieves ___ the building. <span class="points-badge">1 pt</span></p>
+            <label><input type="radio" name="q1" value="a"> a) had left / arrived</label>
+            <label><input type="radio" name="q1" value="b"> b) arrived / had left</label>
+            <label><input type="radio" name="q1" value="c"> c) arrived / have left</label>
+            <div class="feedback" id="feedback-q1"></div>
+        </div>
+
+        <div class="question" id="box-q2">
+            <p>2. You ___ him at the party yesterday, he's currently on a business trip in Japan! <span class="points-badge">2 pts</span></p>
+            <label><input type="radio" name="q2" value="a"> a) mustn't have seen</label>
+            <label><input type="radio" name="q2" value="b"> b) couldn't see</label>
+            <label><input type="radio" name="q2" value="c"> c) can't have seen</label>
+            <div class="feedback" id="feedback-q2"></div>
+        </div>
+
+        <div class="question" id="box-q3">
+            <p>3. He was exhausted because he ___ in the garden for six hours straight. <span class="points-badge">2 pts</span></p>
+            <label><input type="radio" name="q3" value="a"> a) has been working</label>
+            <label><input type="radio" name="q3" value="b"> b) had been working</label>
+            <label><input type="radio" name="q3" value="c"> c) was working</label>
+            <div class="feedback" id="feedback-q3"></div>
+        </div>
+
+        <div class="question" id="box-q4">
+            <p>4. If I ___ more attention during the presentation, I ___ how to solve this problem now. <span class="points-badge">3 pts</span></p>
+            <label><input type="radio" name="q4" value="a"> a) paid / would know</label>
+            <label><input type="radio" name="q4" value="b"> b) had paid / would know</label>
+            <label><input type="radio" name="q4" value="c"> c) had paid / would have known</label>
+            <div class="feedback" id="feedback-q4"></div>
+        </div>
+
+        <div class="question" id="box-q5">
+            <p>5. By the time we arrive at the cinema, the movie ___. <span class="points-badge">1 pt</span></p>
+            <label><input type="radio" name="q5" value="a"> a) will start</label>
+            <label><input type="radio" name="q5" value="b"> b) will have started</label>
+            <label><input type="radio" name="q5" value="c"> c) will be starting</label>
+            <div class="feedback" id="feedback-q5"></div>
+        </div>
+
+        <div class="question" id="box-q6">
+            <p>6. Under no circumstances ___ this confidential document to the press. <span class="points-badge">3 pts</span></p>
+            <label><input type="radio" name="q6" value="a"> a) you should show</label>
+            <label><input type="radio" name="q6" value="b"> b) should you show</label>
+            <label><input type="radio" name="q6" value="c"> c) you must show</label>
+            <div class="feedback" id="feedback-q6"></div>
+        </div>
+
+        <div class="question" id="box-q7">
+            <p>7. By next June, she ___ for this company for exactly twenty years. <span class="points-badge">3 pts</span></p>
+            <label><input type="radio" name="q7" value="a"> a) will have been working</label>
+            <label><input type="radio" name="q7" value="b"> b) will be working</label>
+            <label><input type="radio" name="q7" value="c"> c) will have worked</label>
+            <div class="feedback" id="feedback-q7"></div>
+        </div>
+
+        <div class="question" id="box-q8">
+            <p>8. The author, ___ latest book became a bestseller, won a prestigious award. <span class="points-badge">2 pts</span></p>
+            <label><input type="radio" name="q8" value="a"> a) who's</label>
+            <label><input type="radio" name="q8" value="b"> b) which</label>
+            <label><input type="radio" name="q8" value="c"> c) whose</label>
+            <div class="feedback" id="feedback-q8"></div>
+        </div>
+
+        <div class="question" id="box-q9">
+            <p>9. The famous explorer is believed ___ the ancient city in 1911. <span class="points-badge">3 pts</span></p>
+            <label><input type="radio" name="q9" value="a"> a) to discover</label>
+            <label><input type="radio" name="q9" value="b"> b) to have discovered</label>
+            <label><input type="radio" name="q9" value="c"> c) that he discovered</label>
+            <div class="feedback" id="feedback-q9"></div>
+        </div>
+
+        <div class="question" id="box-q10">
+            <p>10. The manager demanded that the new safety rules ___ implemented immediately. <span class="points-badge">2 pts</span></p>
+            <label><input type="radio" name="q10" value="a"> a) were</label>
+            <label><input type="radio" name="q10" value="b"> b) be</label>
+            <label><input type="radio" name="q10" value="c"> c) to be</label>
+            <div class="feedback" id="feedback-q10"></div>
+        </div>
+
+        <h2>Part 2: Sentence Transformation & Fill in the blanks</h2>
+        
+        <div class="question" id="box-q11">
+            <p>11. I need to ___ my roof ___ (fix) before the rainy season starts. <span class="points-badge">2 pts</span></p>
+            <p class="hint">Введите оба ответа через слэш, запятую или пробел.</p>
+            <input type="text" name="q11" id="input-q11" autocomplete="off" placeholder="Type your answers here...">
+            <div class="feedback" id="feedback-q11"></div>
+        </div>
+
+        <div class="question" id="box-q12">
+            <p>12. How long ___ (you / wait) at the station before the train finally ___? <span class="points-badge">2 pts</span></p>
+            <p class="hint">Введите оба ответа через слэш, запятую или пробел.</p>
+            <input type="text" name="q12" id="input-q12" autocomplete="off" placeholder="Type your answers here...">
+            <div class="feedback" id="feedback-q12"></div>
+        </div>
+
+        <div class="question" id="box-q13">
+            <p>13. ___ (Exhaust) after the long marathon, he fell asleep instantly. <span class="points-badge">1 pt</span></p>
+            <input type="text" name="q13" id="input-q13" autocomplete="off" placeholder="Type your answer here...">
+            <div class="feedback" id="feedback-q13"></div>
+        </div>
+
+        <div class="question" id="box-q14">
+            <p>14. ___ you need further assistance with your application, do not hesitate to contact our support team. <span class="points-badge">3 pts</span></p>
+            <input type="text" name="q14" id="input-q14" autocomplete="off" placeholder="Type your answer here...">
+            <div class="feedback" id="feedback-q14"></div>
+        </div>
+
+        <div class="question" id="box-q15">
+            <p>15. Only after signing the contract ___ (he / realize) that it was a terrible mistake. <span class="points-badge">3 pts</span></p>
+            <input type="text" name="q15" id="input-q15" autocomplete="off" placeholder="Type your answer here...">
+            <div class="feedback" id="feedback-q15"></div>
+        </div>
+
+        <div class="question" id="box-q16">
+            <p>16. I'd rather you ___ (not / mention) this incident to the boss yesterday. <span class="points-badge">2 pts</span></p>
+            <input type="text" name="q16" id="input-q16" autocomplete="off" placeholder="Type your answer here...">
+            <div class="feedback" id="feedback-q16"></div>
+        </div>
+
+        <div class="question" id="box-q17">
+            <p>17. By the end of this month, I ___ (study) French for a whole year. <span class="points-badge">3 pts</span></p>
+            <input type="text" name="q17" id="input-q17" autocomplete="off" placeholder="Type your answer here...">
+            <div class="feedback" id="feedback-q17"></div>
+        </div>
+
+        <div class="question" id="box-q18">
+            <p>18. If she hadn't missed her flight, she ___ (lie) on a tropical beach right now. <span class="points-badge">3 pts</span></p>
+            <input type="text" name="q18" id="input-q18" autocomplete="off" placeholder="Type your answer here...">
+            <div class="feedback" id="feedback-q18"></div>
+        </div>
+
+        <div class="question" id="box-q19">
+            <p>19. The door is locked from the inside. The thief ___ (not / escape) through it. <span class="points-badge">2 pts</span></p>
+            <input type="text" name="q19" id="input-q19" autocomplete="off" placeholder="Type your answer here...">
+            <div class="feedback" id="feedback-q19"></div>
+        </div>
+
+        <div class="question" id="box-q20">
+            <p>20. The politician denied ___ (take) the bribe, despite the clear evidence. <span class="points-badge">3 pts</span></p>
+            <input type="text" name="q20" id="input-q20" autocomplete="off" placeholder="Type your answer here...">
+            <div class="feedback" id="feedback-q20"></div>
+        </div>
+
+        <button type="button" onclick="checkTest()">Calculate Score</button>
+    </div>
+
+    <div id="result-box"></div>
+</div>
+
+<script>
+    function checkTest() {
+        try {
+            let score = 0;
+            const maxScore = 46;
+
+            const part1Data = {
+                q1: { ans: "b", text: "b) arrived / had left", points: 1 },
+                q2: { ans: "c", text: "c) can't have seen", points: 2 },
+                q3: { ans: "b", text: "b) had been working", points: 2 },
+                q4: { ans: "b", text: "b) had paid / would know", points: 3 },
+                q5: { ans: "b", text: "b) will have started", points: 1 },
+                q6: { ans: "b", text: "b) should you show", points: 3 },
+                q7: { ans: "a", text: "a) will have been working", points: 3 },
+                q8: { ans: "c", text: "c) whose", points: 2 },
+                q9: { ans: "b", text: "b) to have discovered", points: 3 },
+                q10: { ans: "b", text: "b) be", points: 2 }
+            };
+
+            let feedbacks = document.querySelectorAll('.feedback');
+            for(let k = 0; k < feedbacks.length; k++) {
+                feedbacks[k].className = 'feedback';
+                feedbacks[k].innerHTML = '';
+            }
+            let inputs = document.querySelectorAll('input[type="text"]');
+            for(let j = 0; j < inputs.length; j++) {
+                inputs[j].classList.remove('correct-input', 'incorrect-input');
+            }
+
+            for (let key in part1Data) {
+                const selected = document.querySelector('input[name="' + key + '"]:checked');
+                const feedbackEl = document.getElementById('feedback-' + key);
+                
+                if (selected) {
+                    if (selected.value === part1Data[key].ans) {
+                        score += part1Data[key].points;
+                        feedbackEl.innerHTML = `✔ Correct (+${part1Data[key].points} pts)`;
+                        feedbackEl.classList.add('correct');
+                    } else {
+                        feedbackEl.innerHTML = `✘ Incorrect. Correct: <b>${part1Data[key].text}</b> (0 pts)`;
+                        feedbackEl.classList.add('incorrect');
+                    }
+                } else {
+                    feedbackEl.innerHTML = `✘ No answer. Correct: <b>${part1Data[key].text}</b> (0 pts)`;
+                    feedbackEl.classList.add('incorrect');
+                }
+            }
+
+            // Умная очистка: заменяет слэши, запятые и точки с запятой на пробелы, а затем убирает двойные пробелы.
+            const cleanText = function(text) {
+                return text.toLowerCase()
+                           .replace(/[.?!'’`]/g, '') 
+                           .replace(/[/,;]/g, ' ') 
+                           .replace(/\s+/g, ' ')
+                           .trim();
+            };
+
+            const part2Data = {
+                q11: {
+                    variants: ["get fixed"],
+                    display: "get / fixed",
+                    points: 2
+                },
+                q12: {
+                    variants: ["had you been waiting arrived"],
+                    display: "had you been waiting / arrived",
+                    points: 2
+                },
+                q13: {
+                    variants: ["exhausted"],
+                    display: "exhausted",
+                    points: 1
+                },
+                q14: {
+                    variants: ["should"],
+                    display: "Should",
+                    points: 3
+                },
+                q15: {
+                    variants: ["did he realize"],
+                    display: "did he realize",
+                    points: 3
+                },
+                q16: {
+                    variants: ["hadnt mentioned", "had not mentioned"],
+                    display: "hadn't mentioned",
+                    points: 2
+                },
+                q17: {
+                    variants: ["will have been studying"],
+                    display: "will have been studying",
+                    points: 3
+                },
+                q18: {
+                    variants: ["would be lying"],
+                    display: "would be lying",
+                    points: 3
+                },
+                q19: {
+                    variants: ["cant have escaped", "couldnt have escaped", "could not have escaped", "cannot have escaped"],
+                    display: "can't have escaped / couldn't have escaped",
+                    points: 2
+                },
+                q20: {
+                    variants: ["having taken"],
+                    display: "having taken",
+                    points: 3
+                }
+            };
+
+            for (let i = 11; i <= 20; i++) {
+                const inputEl = document.getElementById('input-q' + i);
+                const feedbackEl = document.getElementById('feedback-q' + i);
+                
+                const rawInput = inputEl.value;
+                const cleanedInput = cleanText(rawInput);
+                
+                if (rawInput.trim() === '') {
+                    inputEl.classList.add('incorrect-input');
+                    feedbackEl.innerHTML = `✘ Empty. Correct: <b>${part2Data['q'+i].display}</b> (0 pts)`;
+                    feedbackEl.classList.add('incorrect');
+                } else if (part2Data['q'+i].variants.indexOf(cleanedInput) !== -1) {
+                    score += part2Data['q'+i].points;
+                    inputEl.classList.add('correct-input');
+                    feedbackEl.innerHTML = `✔ Correct (+${part2Data['q'+i].points} pts)`;
+                    feedbackEl.classList.add('correct');
+                } else {
+                    inputEl.classList.add('incorrect-input');
+                    feedbackEl.innerHTML = `✘ Incorrect. Correct: <b>${part2Data['q'+i].display}</b> (0 pts)`;
+                    feedbackEl.classList.add('incorrect');
+                }
+            }
+
+            const resultBox = document.getElementById('result-box');
+            resultBox.style.display = 'block';
+            
+            let percentage = Math.round((score / maxScore) * 100);
+            let message = `<strong>Your Total Score: ${score} / ${maxScore} points (${percentage}%)</strong><br><br>`;
+
+            if (percentage >= 85) {
+                resultBox.className = 'success';
+                message += "Outstanding! Your grammar is at a solid C1 Advanced level.";
+            } else if (percentage >= 65) {
+                resultBox.className = 'warning';
+                message += "Great job! You have a strong B2 Upper-Intermediate level, but review some advanced structures.";
+            } else {
+                resultBox.className = 'danger';
+                message += "Keep practicing. These are advanced topics, and you might need more time with B1/B2 foundations.";
+            }
+
+            resultBox.innerHTML = message;
+            
+            setTimeout(function() {
+                window.scrollTo(0, document.body.scrollHeight);
+            }, 100);
+
+        } catch (e) {
+            alert("An error occurred: " + e.message);
+        }
+    }
+</script>
+
+</body>
+</html>
